@@ -1,0 +1,152 @@
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.hero-image {
+  animation: float 6s ease-in-out infinite;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.02) translateY(-5px);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+}
+
+.feature-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.4);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4, #0891b2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: shimmer 3s linear infinite;
+}
+
+.nav-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.button-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shimmer 3s linear infinite;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Responsive image handling */
+img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #06b6d4);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #2563eb, #0891b2);
+}
+
+/* Additional animations */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+.scale-on-hover {
+  transition: transform 0.3s ease;
+}
+
+.scale-on-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Container class for consistent padding */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Ensure proper z-index stacking */
+.z-1 {
+  z-index: 1;
+}
+
+.z-2 {
+  z-index: 2;
+}

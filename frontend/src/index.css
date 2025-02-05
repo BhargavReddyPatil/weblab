@@ -1,0 +1,53 @@
+@import './styles/landing.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans m-0 p-0 bg-gray-100;
+  }
+
+  h1, h2 {
+    @apply text-gray-800;
+  }
+}
+
+@layer components {
+  form {
+    @apply mb-5;
+  }
+
+  input, 
+  select {
+    @apply m-1 px-3 py-2 border border-gray-300 rounded-md 
+    focus:ring-2 focus:ring-primary-500 focus:border-primary-500;
+  }
+
+  button {
+    @apply m-1 px-4 py-2 bg-primary-600 text-white rounded-md
+    hover:bg-primary-700 transition-colors duration-200
+    focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  table {
+    @apply w-full border-collapse mt-5;
+  }
+
+  th, td {
+    @apply p-3 border border-gray-200 text-left;
+  }
+
+  th {
+    @apply bg-primary-600 text-white;
+  }
+
+  ul {
+    @apply list-none p-0;
+  }
+
+  li {
+    @apply bg-white my-2.5 p-3 border border-gray-200 rounded-md 
+    shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+}
